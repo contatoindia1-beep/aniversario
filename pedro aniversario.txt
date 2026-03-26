@@ -25,7 +25,7 @@
             overflow: hidden;
         }
 
-        /* SIMULA«√O DO CELULAR */
+        /* SIMULA√á√ÉO DO CELULAR */
         .celular {
             width: 100%;
             max-width: 400px;
@@ -36,7 +36,7 @@
             box-shadow: 0 0 50px rgba(0,0,0,0.8);
         }
 
-        /* ANIMA«√O DE DESLIZAR (SLIDER) */
+        /* ANIMA√á√ÉO DE DESLIZAR (SLIDER) */
         .slider {
             display: flex;
             width: 200%;
@@ -54,7 +54,7 @@
             align-items: center;
         }
 
-        /* ANIMA«’ES VISUAIS */
+        /* ANIMA√á√ïES VISUAIS */
         @keyframes girar { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
@@ -130,8 +130,37 @@
             padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold;
             margin-top: 10px; margin-bottom: 40px;
         }
+.tela {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* ESSA √â A CHAVE: Permite rolar se o conte√∫do for grande */
+    overflow-y: auto; 
+    /* Esconde a barra de rolagem visualmente em alguns navegadores */
+    scrollbar-width: none; 
+}
 
-        /* GEST√O DA TROCA DE TELA */
+.tela::-webkit-scrollbar {
+    display: none; /* Esconde a barra no Chrome/Safari */
+}
+
+/* Ajuste na lista para n√£o cortar o √∫ltimo item */
+.lista-presentes { 
+    width: 100%; 
+    margin-bottom: 20px;
+    padding-bottom: 30px; 
+}
+
+/* Garante que o √≠cone de presente do topo tenha um espa√ßo */
+.tela > div:first-child {
+    margin-top: 10px;
+}
+        /* GEST√ÉO DA TROCA DE TELA */
         .ver-presentes .slider { transform: translateX(-50%); }
     </style>
 </head>
@@ -148,8 +177,8 @@
                 </div>
 
                 <div class="chamada">
-                    <p style="font-size: 13px; letter-spacing: 2px;">VocÍ est· convidado para o</p>
-                    <h1 style="font-size: 38px; font-weight: 900;">Anivers·rio</h1>
+                    <p style="font-size: 13px; letter-spacing: 2px;">Voc√™ est√° convidado para o</p>
+                    <h1 style="font-size: 38px; font-weight: 900;">Anivers√°rio</h1>
                     <p style="font-size: 15px; color: #fff; margin-top: 5px;">do craque</p>
                 </div>
 
@@ -163,34 +192,34 @@
 
                 <div class="card-info">
                     <div class="item-info"><span>??</span> <b>DATA:</b> &nbsp; 9 de Maio</div>
-                    <div class="item-info"><span>??</span> <b>HOR¡RIO:</b> &nbsp; 17h</div>
+                    <div class="item-info"><span>??</span> <b>HOR√ÅRIO:</b> &nbsp; 17h</div>
                     <div class="item-info"><span>??</span> <b>LOCAL:</b> &nbsp; Bella Vista, n29 - Fazenda Grande III</div>
                 </div>
 
                 <button class="botao-presentes" onclick="navegar(true)">
-                    <span>?? Sugestıes de Presentes</span>
+                    <span>?? Sugest√µes de Presentes</span>
                     <span style="font-size: 20px;">?</span>
                 </button>
             </div>
 
             <div class="tela">
                 <div style="font-size: 40px; margin-bottom: 10px;">??</div>
-                <h2 class="titulo-presentes">SUGEST’ES DE PRESENTES</h2>
+                <h2 class="titulo-presentes">SUGEST√ïES DE PRESENTES</h2>
                 <p class="sub-presentes">Para o craque Pedro Calleb</p>
 
                 <div class="lista-presentes">
                     <div class="presente-item"><div class="icon-box" style="background: #22c55e;">?</div><div class="p-info"><p class="p-nome">#1 Bola de Futebol</p><p class="p-detalhe">Para treinar os dribles!</p></div></div>
-                    <div class="presente-item"><div class="icon-box" style="background: #3b82f6;">??</div><div class="p-info"><p class="p-nome">#2 Sapato / Percata</p><p class="p-detalhe">N˙mero <span class="destaque-amarelo">34</span></p></div></div>
+                    <div class="presente-item"><div class="icon-box" style="background: #3b82f6;">??</div><div class="p-info"><p class="p-nome">#2 Sapato / Percata</p><p class="p-detalhe">N√∫mero <span class="destaque-amarelo">34</span></p></div></div>
                     <div class="presente-item"><div class="icon-box" style="background: #ef4444;">??</div><div class="p-info"><p class="p-nome">#3 Camisa</p><p class="p-detalhe">Tamanho <span class="destaque-amarelo">14 anos</span></p></div></div>
                     <div class="presente-item"><div class="icon-box" style="background: #a855f7;">??</div><div class="p-info"><p class="p-nome">#4 Bermuda</p><p class="p-detalhe">Tamanho <span class="destaque-amarelo">14 anos</span></p></div></div>
-                    <div class="presente-item"><div class="icon-box" style="background: #06b6d4;">??</div><div class="p-info"><p class="p-nome">#5 Toalha</p><p class="p-detalhe">Para os treinos di·rios</p></div></div>
-                    <div class="presente-item"><div class="icon-box" style="background: #f97316;">??</div><div class="p-info"><p class="p-nome">#6 Sand·lia</p><p class="p-detalhe">N˙mero <span class="destaque-amarelo">33</span></p></div></div>
-                    <div class="presente-item"><div class="icon-box" style="background: #b91c1c;">???</div><div class="p-info"><p class="p-nome">#7 Camisa CR7 / Bahia</p><p class="p-detalhe">Do time do coraÁ„o!</p></div></div>
+                    <div class="presente-item"><div class="icon-box" style="background: #06b6d4;">??</div><div class="p-info"><p class="p-nome">#5 Toalha</p><p class="p-detalhe">Para os treinos di√°rios</p></div></div>
+                    <div class="presente-item"><div class="icon-box" style="background: #f97316;">??</div><div class="p-info"><p class="p-nome">#6 Sand√°lia</p><p class="p-detalhe">N√∫mero <span class="destaque-amarelo">33</span></p></div></div>
+                    <div class="presente-item"><div class="icon-box" style="background: #b91c1c;">???</div><div class="p-info"><p class="p-nome">#7 Camisa CR7 / Bahia</p><p class="p-detalhe">Do time do cora√ß√£o!</p></div></div>
                     <div class="presente-item"><div class="icon-box" style="background: #6b21a8;">??</div><div class="p-info"><p class="p-nome">#8 Mochila</p><p class="p-detalhe">Para carregar as conquistas!</p></div></div>
-                    <div class="presente-item"><div class="icon-box" style="background: #ec4899;">??</div><div class="p-info"><p class="p-nome">#9 Pipas</p><p class="p-detalhe">Divers„o garantida!</p></div></div>
+                    <div class="presente-item"><div class="icon-box" style="background: #ec4899;">??</div><div class="p-info"><p class="p-nome">#9 Pipas</p><p class="p-detalhe">Divers√£o garantida!</p></div></div>
                 </div>
 
-                <p class="mensagem-final">?? Qualquer presente ser· recebido com muito carinho!</p>
+                <p class="mensagem-final">?? Qualquer presente ser√° recebido com muito carinho!</p>
 
                 <button class="botao-voltar" onclick="navegar(false)">? Voltar ao Convite</button>
             </div>
