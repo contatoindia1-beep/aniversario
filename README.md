@@ -130,7 +130,36 @@
             padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold;
             margin-top: 10px; margin-bottom: 40px;
         }
+.tela {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* ESSA É A CHAVE: Permite rolar se o conteúdo for grande */
+    overflow-y: auto; 
+    /* Esconde a barra de rolagem visualmente em alguns navegadores */
+    scrollbar-width: none; 
+}
 
+.tela::-webkit-scrollbar {
+    display: none; /* Esconde a barra no Chrome/Safari */
+}
+
+/* Ajuste na lista para não cortar o último item */
+.lista-presentes { 
+    width: 100%; 
+    margin-bottom: 20px;
+    padding-bottom: 30px; 
+}
+
+/* Garante que o ícone de presente do topo tenha um espaço */
+.tela > div:first-child {
+    margin-top: 10px;
+}
         /* GESTÃO DA TROCA DE TELA */
         .ver-presentes .slider { transform: translateX(-50%); }
     </style>
