@@ -130,20 +130,21 @@
             padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold;
             margin-top: 10px; margin-bottom: 40px;
         }
-.tela {
+/* Este código permite apenas a rolagem sem estragar o design */
+    .tela {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ocupa a altura da tela do telemóvel */
     flex-shrink: 0;
-    padding: 30px 20px;
-    display: flex;
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch;
+     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    /* ESSA É A CHAVE: Permite rolar se o conteúdo for grande */
-    overflow-y: auto; 
-    /* Esconde a barra de rolagem visualmente em alguns navegadores */
-    scrollbar-width: none; 
-}
+    padding-bottom: 50px; /* Dá espaço no final da lista */
+    }
+
+    /* Esconde a barra de rolagem para ficar bonito */
+    .tela::-webkit-scrollbar { display: none; }
 
 .tela::-webkit-scrollbar {
     display: none; /* Esconde a barra no Chrome/Safari */
